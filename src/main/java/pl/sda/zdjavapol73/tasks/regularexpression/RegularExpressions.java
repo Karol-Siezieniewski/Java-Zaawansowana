@@ -29,17 +29,13 @@ public class RegularExpressions implements Task {
         // check if mail is valid
         String mail = "sadfk_.j34@test.eu";
         String invalidMail = "t@t";
-        MailValidator mailValidator = null;
+        MailValidator mailValidator = new MailRegexValidator();
 
-        if (mailValidator.isMailValid(mail)) {
-            System.out.println("mail is valid");
-        } else {
-            System.out.println("mail is invalid");
-        }
-
-        if (mailValidator.isMailValid(invalidMail)) {
-            System.out.println("mail is valid");
-        } else {
+        try {
+            if (mailValidator.isMailValid(invalidMail)) {
+                System.out.println("mail is valid");
+            }
+        } catch (MailInvalidException e) {
             System.out.println("mail is invalid");
         }
     }
@@ -73,3 +69,14 @@ class PeselRegularExpressionValidator implements PeselValidator {
 
 // implement MailValidator interface
 // use regex to check if string is valid mail ^([\w\.-]+)@([\w\.-]+)\.(\w+)$
+class MailRegexValidator implements MailValidator {
+
+    @Override
+    public boolean isMailValid(String mail) throws MailInvalidException {
+        Pattern pattern = Pattern.compile("^([\\w.-]+)@([\\w.-]+)\\.(\\w+)$");
+        if (pattern.matcher(mail).matches()) {
+            return true;
+        }
+        throw new MailInvalidException();
+    }
+}
