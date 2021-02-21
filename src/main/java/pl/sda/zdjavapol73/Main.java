@@ -5,6 +5,8 @@ import pl.sda.zdjavapol73.tasks.DateAndTime;
 import pl.sda.zdjavapol73.tasks.individual.DateTimeIndividual;
 import pl.sda.zdjavapol73.tasks.individual.FileReaderIndividual;
 import pl.sda.zdjavapol73.tasks.io.FileReader;
+import pl.sda.zdjavapol73.tasks.io.FileWriter;
+import pl.sda.zdjavapol73.tasks.io.ReadWrite;
 import pl.sda.zdjavapol73.tasks.regularexpression.RegularExpressions;
 
 import java.util.ArrayList;
@@ -18,7 +20,9 @@ public class Main {
 //        tasks.add(new DateTimeIndividual());
 //        tasks.add(new RegularExpressions());
 //        tasks.add(new FileReader());
-        tasks.add(new FileReaderIndividual());
+//        tasks.add(new FileReaderIndividual());
+//        tasks.add(new FileWriter());
+        tasks.add(new ReadWrite());
 
         for (Task task : tasks) {
             task.run();
