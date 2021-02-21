@@ -48,7 +48,6 @@ public class ReadWrite implements Task {
         final String line = scanner.nextLine();
         System.out.println("1 - file, 2 - console");
         int userChoice = getUserChoice();
-        System.out.println();
         switch (userChoice) {
             case 1:
                 try (final PrintWriter pw = new PrintWriter("output.txt")) {
@@ -60,7 +59,6 @@ public class ReadWrite implements Task {
             case 2:
                 try (final PrintWriter pw = new PrintWriter(System.out)) {
                     write(pw, line);
-                    break;
                 }
         }
     }

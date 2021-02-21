@@ -2,6 +2,7 @@ package pl.sda.zdjavapol73;
 
 import pl.sda.zdjavapol73.api.Task;
 import pl.sda.zdjavapol73.tasks.DateAndTime;
+import pl.sda.zdjavapol73.tasks.functional.FunctionalTask;
 import pl.sda.zdjavapol73.tasks.individual.DateTimeIndividual;
 import pl.sda.zdjavapol73.tasks.individual.FileReaderIndividual;
 import pl.sda.zdjavapol73.tasks.io.FileReader;
@@ -10,6 +11,7 @@ import pl.sda.zdjavapol73.tasks.io.ReadWrite;
 import pl.sda.zdjavapol73.tasks.regularexpression.RegularExpressions;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 public class Main {
@@ -22,12 +24,20 @@ public class Main {
 //        tasks.add(new FileReader());
 //        tasks.add(new FileReaderIndividual());
 //        tasks.add(new FileWriter());
-        tasks.add(new ReadWrite());
+//        tasks.add(new ReadWrite());
+        tasks.add(new FunctionalTask());
 
         for (Task task : tasks) {
             task.run();
         }
 
         //        System.out.println(new Random().nextInt(18) + 1);
+
+//        final String[] strings = {"To", "jest", "przykład"};
+
+        /*for (String string : strings) {
+            System.out.println(string);
+        }*/
+
     }
 }
