@@ -73,7 +73,13 @@ class MailRegexValidator implements MailValidator {
 
     @Override
     public boolean isMailValid(String mail) throws MailInvalidException {
-        Pattern pattern = Pattern.compile("^([\\w.-]+)@([\\w.-]+)\\.(\\w+)$");
+        Pattern pattern = Pattern.compile("^" +
+                "([\\w.-]+)" + // word, dot, - one or more times
+                "@" +
+                "([\\w.-]+)" +
+                "\\." +
+                "(\\w+)" +
+                "$");
         if (pattern.matcher(mail).matches()) {
             return true;
         }

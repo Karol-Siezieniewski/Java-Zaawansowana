@@ -3,6 +3,8 @@ package pl.sda.zdjavapol73;
 import pl.sda.zdjavapol73.api.Task;
 import pl.sda.zdjavapol73.tasks.DateAndTime;
 import pl.sda.zdjavapol73.tasks.individual.DateTimeIndividual;
+import pl.sda.zdjavapol73.tasks.individual.FileReaderIndividual;
+import pl.sda.zdjavapol73.tasks.io.FileReader;
 import pl.sda.zdjavapol73.tasks.regularexpression.RegularExpressions;
 
 import java.util.ArrayList;
@@ -14,7 +16,9 @@ public class Main {
 //                tasks.add(new DateAndTime());
         //        tasks.add(new RegularExpressions());
 //        tasks.add(new DateTimeIndividual());
-        tasks.add(new RegularExpressions());
+//        tasks.add(new RegularExpressions());
+//        tasks.add(new FileReader());
+        tasks.add(new FileReaderIndividual());
 
         for (Task task : tasks) {
             task.run();
