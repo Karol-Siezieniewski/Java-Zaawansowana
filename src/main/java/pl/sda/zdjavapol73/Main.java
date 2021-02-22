@@ -24,8 +24,8 @@ public class Main {
 //        tasks.add(new FileReader());
 //        tasks.add(new FileReaderIndividual());
 //        tasks.add(new FileWriter());
-//        tasks.add(new ReadWrite());
-        tasks.add(new FunctionalTask());
+        tasks.add(new ReadWrite());
+//        tasks.add(new FunctionalTask());
 
         for (Task task : tasks) {
             task.run();
