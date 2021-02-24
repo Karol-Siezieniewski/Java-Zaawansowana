@@ -48,7 +48,6 @@ public class ReadWrite implements Task {
         final String line = scanner.nextLine();
         System.out.println("1 - file, 2 - console");
         int userChoice = getUserChoice();
-        System.out.println("User choice: " + userChoice);
         switch (userChoice) {
             case 1:
                 try (final PrintWriter pw = new PrintWriter("output.txt")) {
@@ -60,14 +59,13 @@ public class ReadWrite implements Task {
             case 2:
                 final PrintWriter pw = new PrintWriter(System.out);
                 write(pw, line);
-                System.out.println("test case2");
         }
-        System.out.println("test writer end");
     }
 
     private void write(PrintWriter pw, String line) {
         pw.println("User typed in following text:");
         pw.println(line);
         pw.println("#############################");
+        pw.flush();
     }
 }
