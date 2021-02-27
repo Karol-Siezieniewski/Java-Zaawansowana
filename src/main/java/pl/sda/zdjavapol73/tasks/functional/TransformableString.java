@@ -8,7 +8,8 @@ public class TransformableString {
     }
 
     public TransformableString transform(StringTransformator transformator) {
-        return new TransformableString(transformator.transform(content));
+        String newContent = transformator.executeTransformation(this.content);
+        return new TransformableString(newContent);
     }
 
     @Override

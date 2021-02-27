@@ -2,5 +2,8 @@ package pl.sda.zdjavapol73.tasks.functional;
 
 @FunctionalInterface
 public interface StringTransformator {
-    String transform(String stringToTransform);
+    String executeTransformation(String stringToTransform);
 }
+
+//  String (String);
+// (argument) -> String

@@ -24,7 +24,7 @@ public class FunctionalTask implements Task {
         System.out.println("String before transformation: " + transformableString);
         final TransformableString transformedString = transformableString.transform(new StringTransformator() {
             @Override
-            public String transform(String stringToTransform) {
+            public String executeTransformation(String stringToTransform) {
                 return stringToTransform + "!!!";
             }
         });
@@ -52,7 +52,7 @@ public class FunctionalTask implements Task {
 class MyTransformator implements StringTransformator {
 
     @Override
-    public String transform(String stringToTransform) {
+    public String executeTransformation(String stringToTransform) {
         return stringToTransform + "!!!";
     }
 }
