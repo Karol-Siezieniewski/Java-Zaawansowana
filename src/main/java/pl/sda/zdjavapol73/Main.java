@@ -1,6 +1,7 @@
 package pl.sda.zdjavapol73;
 
 import pl.sda.zdjavapol73.api.Task;
+import pl.sda.zdjavapol73.tasks.collection.CollectionTask;
 import pl.sda.zdjavapol73.tasks.functional.FunctionalTask2;
 import pl.sda.zdjavapol73.tasks.generic.GenericTask;
 import pl.sda.zdjavapol73.tasks.generic.GenericTaskIndividual;
@@ -22,7 +23,8 @@ public class Main {
         //        tasks.add(new ReadWrite());
         //        tasks.add(new FunctionalTask());
 //        tasks.add(new FunctionalTask2());
-        tasks.add(new GenericTaskIndividual());
+//        tasks.add(new GenericTaskIndividual());
+        tasks.add(new CollectionTask());
 
         for (Task task : tasks) {
             task.run();
@@ -35,6 +37,5 @@ public class Main {
         /*for (String string : strings) {
             System.out.println(string);
         }*/
-
     }
 }

@@ -15,13 +15,13 @@ public class GenericTaskIndividual implements Task {
         final Consumer<Double> c = aDouble -> {};
         checkIfNotNull(c);
 
-        final Consumer<String> c1 = null;
+        final Consumer<String> c1 = System.out::println;
         checkIfNotNull(c1);
 
         final Consumer<BigDecimal> c2 = null;
         checkIfNotNull(c2);
 
-        final Function<String, Double> f = null;
+        final Function<String, Double> f = Double::valueOf;
         checkIfNotNull(f);
 
         final Function<Integer, String> f1 = null;
