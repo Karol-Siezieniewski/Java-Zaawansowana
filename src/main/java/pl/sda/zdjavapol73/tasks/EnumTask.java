@@ -1,0 +1,17 @@
+package pl.sda.zdjavapol73.tasks;
+
+import pl.sda.zdjavapol73.api.Task;
+import pl.sda.zdjavapol73.tasks.collection.domain.VideoType;
+
+import java.util.Arrays;
+
+public class EnumTask implements Task {
+    @Override
+    public void run() {
+        final VideoType clip = VideoType.CLIP;
+        System.out.println("name -> " + clip.name());
+        System.out.println("ordinal -> " + clip.ordinal());
+        System.out.println("maxDuration -> " + clip.getMaxDuration());
+        Arrays.stream(VideoType.values()).forEach(System.out::println);
+    }
+}
