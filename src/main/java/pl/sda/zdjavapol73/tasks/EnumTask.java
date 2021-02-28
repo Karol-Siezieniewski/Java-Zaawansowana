@@ -4,6 +4,7 @@ import pl.sda.zdjavapol73.api.Task;
 import pl.sda.zdjavapol73.tasks.collection.domain.VideoType;
 
 import java.util.Arrays;
+import java.util.function.Consumer;
 
 public class EnumTask implements Task {
     @Override
@@ -12,6 +13,8 @@ public class EnumTask implements Task {
         System.out.println("name -> " + clip.name());
         System.out.println("ordinal -> " + clip.ordinal());
         System.out.println("maxDuration -> " + clip.getMaxDuration());
-        Arrays.stream(VideoType.values()).forEach(System.out::println);
+        Consumer<VideoType> c1 = System.out::println;
+        Arrays.stream(VideoType.values())
+                .forEach(c1.andThen(videoType -> System.out.println(videoType.getMaxDuration())));
     }
 }
