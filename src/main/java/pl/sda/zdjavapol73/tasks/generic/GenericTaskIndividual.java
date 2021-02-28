@@ -12,6 +12,8 @@ public class GenericTaskIndividual implements Task {
 
     @Override
     public void run() {
+        final Consumer<Object> co = c -> {};
+
         final Consumer<Double> c = aDouble -> {};
         checkIfNotNull(c);
 
@@ -30,7 +32,7 @@ public class GenericTaskIndividual implements Task {
         final Function<Double, BigDecimal> f2 = null;
         checkIfNotNull(f2);
 
-        final Supplier<String> s = null;
+        final Supplier<String> s = () -> "";
         checkIfNotNull(s);
 
         final Supplier<Double> s1 = null;

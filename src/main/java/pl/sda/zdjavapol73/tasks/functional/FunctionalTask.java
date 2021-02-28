@@ -34,6 +34,7 @@ public class FunctionalTask implements Task {
     private void lambda() {
         // lambda syntax
         // (args...) -> { body }/expression
+        final StringTransformator t = tl -> "";
         final StringTransformator transformator = (String arg) -> { return arg + "!!!"; };
         final StringTransformator transformator1 = (String arg) -> arg + "!!!";
         final StringTransformator transformator2 = (arg) -> arg + "!!!";

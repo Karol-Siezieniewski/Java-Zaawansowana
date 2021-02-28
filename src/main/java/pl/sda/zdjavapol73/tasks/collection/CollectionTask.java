@@ -2,12 +2,7 @@ package pl.sda.zdjavapol73.tasks.collection;
 
 import pl.sda.zdjavapol73.api.Task;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.function.ToDoubleFunction;
-import java.util.stream.Collectors;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class CollectionTask implements Task {
@@ -40,7 +35,7 @@ public class CollectionTask implements Task {
     }
 
     private void collectionIteration() {
-        final Collection<Integer> ints = new ArrayList<>(100);
+        final Collection<Integer> ints = new ArrayList<>();
         System.out.println("Size of collection before loop: " + ints.size());
 
         for (int i = 0; i < 100; i++) {
@@ -52,8 +47,13 @@ public class CollectionTask implements Task {
         printCollection(ints.stream());
 
         System.out.println("After filtration");
-        ints.stream().filter(num -> num % 2 == 0).map(num -> Math.pow(num, 2)).distinct().sorted()
-                .forEach(num -> System.out.print(num + " "));
+        ints.stream()
+                .filter(num -> num % 2 == 0 && num != 0) // only even nums
+                .map(num -> Math.pow(num, 2)) // nums to square
+                .distinct()// only unique nums
+                .sorted() // sorted from lowest to highest
+                .forEach(num -> System.out.print(num + " ")); // print
+
         // TODO: przefiltrowac parzyste wartosci, podniesc przefiltrowane wartosci do kwadratu
         // przefiltrowac unikalne wartosci
         // posortowac od najmniejszej do najwiekszej
