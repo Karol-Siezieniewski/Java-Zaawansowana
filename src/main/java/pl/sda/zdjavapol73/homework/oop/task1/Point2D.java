@@ -1,4 +1,4 @@
-package pl.sda.zdjavapol73.homework.oop;
+package pl.sda.zdjavapol73.homework.oop.task1;
 
 public class Point2D {
     float x;
