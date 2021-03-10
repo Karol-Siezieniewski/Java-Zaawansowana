@@ -9,6 +9,7 @@ import pl.sda.zdjavapol73.homework.oop.task3.Rectangle;
 import pl.sda.zdjavapol73.homework.oop.task3.Shape;
 import pl.sda.zdjavapol73.homework.oop.task3.Square;
 import pl.sda.zdjavapol73.homework.oop.task5.Line;
+import pl.sda.zdjavapol73.homework.oop.task6.MovablePoint;
 import pl.sda.zdjavapol73.tasks.EnumTask;
 
 import java.util.ArrayList;
@@ -82,6 +83,14 @@ public class Main {
         System.out.println(test5.getStart());
         System.out.println(test5.getMiddle());
         System.out.println(test5.getLength());
+
+        MovablePoint point = new MovablePoint(0, 0, 3, 2);
+        point.moveUp();
+        point.moveUp();
+        point.moveUp();
+        point.moveDown();
+        point.moveLeft();
+        point.getPosition();
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
