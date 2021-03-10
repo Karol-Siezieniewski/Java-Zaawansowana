@@ -3,6 +3,10 @@ package pl.sda.zdjavapol73;
 import pl.sda.zdjavapol73.api.Task;
 import pl.sda.zdjavapol73.homework.oop.task1.Point3D;
 import pl.sda.zdjavapol73.homework.oop.task2.Student;
+import pl.sda.zdjavapol73.homework.oop.task3.Circle;
+import pl.sda.zdjavapol73.homework.oop.task3.Rectangle;
+import pl.sda.zdjavapol73.homework.oop.task3.Shape;
+import pl.sda.zdjavapol73.homework.oop.task3.Square;
 import pl.sda.zdjavapol73.tasks.EnumTask;
 
 import java.util.ArrayList;
@@ -41,13 +45,31 @@ public class Main {
         System.out.println(point.toString());
         System.out.println(point.getXY().length);*/
 
-        Point3D point = new Point3D(3.11f, 2.11f, 3.15f);
+       /* Point3D point = new Point3D(3.11f, 2.11f, 3.15f);
         System.out.println(point.toString());
         point.SetXYZ(3.00f, 2.00f, 5.00f);
         System.out.println(point.toString());
 
         Student test = new Student("law", "IV", 1000);
+        System.out.println(test.toString());*/
+
+        Shape test = new Shape("red", true);
         System.out.println(test.toString());
+        Circle test1 = new Circle("red", false, 5);
+        System.out.println(test1.getArea());
+        System.out.println(test1.getPerimeter());
+        System.out.println(test1.toString());
+
+        Rectangle test2 = new Rectangle("red", false, 5, 10);
+        System.out.println(test2.getArea());
+        System.out.println(test2.getPerimeter());
+        System.out.println(test2.toString());
+
+        Square test3 = new Square("red", true, 10);
+        test3.setWidth(5);
+        System.out.println(test3.getArea());
+        System.out.println(test3.getPerimeter());
+        System.out.println(test3.toString());
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
