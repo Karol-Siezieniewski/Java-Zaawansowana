@@ -1,6 +1,7 @@
 package pl.sda.zdjavapol73;
 
 import pl.sda.zdjavapol73.api.Task;
+import pl.sda.zdjavapol73.homework.oop.Point2D;
 import pl.sda.zdjavapol73.tasks.EnumTask;
 import pl.sda.zdjavapol73.tasks.OptionalTask;
 import pl.sda.zdjavapol73.tasks.collection.CollectionTask;
@@ -37,6 +38,15 @@ public class Main {
         for (Task task : tasks) {
             task.run();
         }
+
+        Point2D point = new Point2D();
+        System.out.println(point.getX());
+        point.setX(3.14f);
+        point.setY(1.23f);
+        System.out.println(point.getY());
+        System.out.println(point.toString());
+        System.out.println(point.getXY().length);
+
 
         //        System.out.println(new Random().nextInt(18) + 1);
 
