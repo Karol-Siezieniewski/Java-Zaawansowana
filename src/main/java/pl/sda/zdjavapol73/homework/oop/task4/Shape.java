@@ -41,5 +41,7 @@ public abstract class Shape {
         } else {
             return "Shape with color of " + this.color + " and not filled";
         }
+
+        // String.format("Shape with color of %s and %s", color, isFilled ? "filled" : "NotFilled");
     }
 }

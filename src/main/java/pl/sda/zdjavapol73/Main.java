@@ -1,12 +1,14 @@
 package pl.sda.zdjavapol73;
 
 import pl.sda.zdjavapol73.api.Task;
+import pl.sda.zdjavapol73.homework.oop.task1.Point2D;
 import pl.sda.zdjavapol73.homework.oop.task1.Point3D;
 import pl.sda.zdjavapol73.homework.oop.task2.Student;
 import pl.sda.zdjavapol73.homework.oop.task3.Circle;
 import pl.sda.zdjavapol73.homework.oop.task3.Rectangle;
 import pl.sda.zdjavapol73.homework.oop.task3.Shape;
 import pl.sda.zdjavapol73.homework.oop.task3.Square;
+import pl.sda.zdjavapol73.homework.oop.task5.Line;
 import pl.sda.zdjavapol73.tasks.EnumTask;
 
 import java.util.ArrayList;
@@ -14,7 +16,7 @@ import java.util.Collection;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println();
+/*        System.out.println();
         Collection<Task> tasks = new ArrayList<>();
         //                tasks.add(new DateAndTime());
         //        tasks.add(new RegularExpressions());
@@ -35,7 +37,7 @@ public class Main {
 
         for (Task task : tasks) {
             task.run();
-        }
+        }*/
 
 /*        Point2D point = new Point2D();
         System.out.println(point.getX());
@@ -53,7 +55,7 @@ public class Main {
         Student test = new Student("law", "IV", 1000);
         System.out.println(test.toString());*/
 
-        Shape test = new Shape("red", true);
+        /*Shape test = new Shape("red", true);
         System.out.println(test.toString());
         Circle test1 = new Circle("red", false, 5);
         System.out.println(test1.getArea());
@@ -74,7 +76,12 @@ public class Main {
         pl.sda.zdjavapol73.homework.oop.task4.Square test4 = new pl.sda.zdjavapol73.homework.oop.task4.Square("blue", true, 20);
         System.out.println(test4.getArea());
         System.out.println(test4.getPerimeter());
-        System.out.println(test4.toString());
+        System.out.println(test4.toString());*/
+
+        Line test5 = new Line(new Point2D(2,5), new Point2D(10, 9));
+        System.out.println(test5.getStart());
+        System.out.println(test5.getMiddle());
+        System.out.println(test5.getLength());
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
