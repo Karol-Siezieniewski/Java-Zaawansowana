@@ -71,6 +71,11 @@ public class Main {
         System.out.println(test3.getPerimeter());
         System.out.println(test3.toString());
 
+        pl.sda.zdjavapol73.homework.oop.task4.Square test4 = new pl.sda.zdjavapol73.homework.oop.task4.Square("blue", true, 20);
+        System.out.println(test4.getArea());
+        System.out.println(test4.getPerimeter());
+        System.out.println(test4.toString());
+
 
         //        System.out.println(new Random().nextInt(18) + 1);
 
