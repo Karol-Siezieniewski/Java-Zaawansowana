@@ -4,12 +4,13 @@ import pl.sda.zdjavapol73.api.Task;
 import pl.sda.zdjavapol73.homework.oop.task1.Point2D;
 import pl.sda.zdjavapol73.homework.oop.task1.Point3D;
 import pl.sda.zdjavapol73.homework.oop.task2.Student;
-import pl.sda.zdjavapol73.homework.oop.task3.Circle;
 import pl.sda.zdjavapol73.homework.oop.task3.Rectangle;
 import pl.sda.zdjavapol73.homework.oop.task3.Shape;
 import pl.sda.zdjavapol73.homework.oop.task3.Square;
 import pl.sda.zdjavapol73.homework.oop.task5.Line;
 import pl.sda.zdjavapol73.homework.oop.task6.MovablePoint;
+import pl.sda.zdjavapol73.homework.oop.task7.Circle;
+import pl.sda.zdjavapol73.homework.oop.task7.ResizableCircle;
 import pl.sda.zdjavapol73.tasks.EnumTask;
 
 import java.util.ArrayList;
@@ -79,7 +80,7 @@ public class Main {
         System.out.println(test4.getPerimeter());
         System.out.println(test4.toString());*/
 
-        Line test5 = new Line(new Point2D(2,5), new Point2D(10, 9));
+       /* Line test5 = new Line(new Point2D(2,5), new Point2D(10, 9));
         System.out.println(test5.getStart());
         System.out.println(test5.getMiddle());
         System.out.println(test5.getLength());
@@ -91,6 +92,13 @@ public class Main {
         point.moveDown();
         point.moveLeft();
         point.getPosition();
+
+        ResizableCircle test6 = new ResizableCircle(4.0);
+        System.out.println(test6.getArea());
+        test6.resize(75);
+        System.out.println(test6.getRadius());
+        System.out.println(test6.getArea());*/
+
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
