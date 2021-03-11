@@ -1,6 +1,8 @@
 package pl.sda.zdjavapol73;
 
 import pl.sda.zdjavapol73.api.Task;
+import pl.sda.zdjavapol73.homework.exceptions.task1.CannotDivideBy0Exception;
+import pl.sda.zdjavapol73.homework.exceptions.task1.MathematicalDivide;
 import pl.sda.zdjavapol73.homework.oop.task1.Point2D;
 import pl.sda.zdjavapol73.homework.oop.task1.Point3D;
 import pl.sda.zdjavapol73.homework.oop.task2.Student;
@@ -17,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CannotDivideBy0Exception {
 /*        System.out.println();
         Collection<Task> tasks = new ArrayList<>();
         //                tasks.add(new DateAndTime());
@@ -99,6 +101,8 @@ public class Main {
         System.out.println(test6.getRadius());
         System.out.println(test6.getArea());*/
 
+        System.out.println(MathematicalDivide.divide(4.0, 1));
+        System.out.println(MathematicalDivide.divide(4.0, 0));
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
