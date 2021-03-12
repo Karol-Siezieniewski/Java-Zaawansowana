@@ -2,6 +2,7 @@ package pl.sda.zdjavapol73;
 
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task2.Movie;
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task3.Car;
+import pl.sda.zdjavapol73.homework.enumTasks.task1.Weekday;
 import pl.sda.zdjavapol73.homework.exceptions.task1.CannotDivideBy0Exception;
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task1.UserValidator;
 
@@ -104,6 +105,8 @@ public class Main {
 
         Car car = new Car("Tesla X", "luxury");
         System.out.println(car.toString());
+
+        Weekday.FRIDAY.whichIsGreater(Weekday.SATURDAY);
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
