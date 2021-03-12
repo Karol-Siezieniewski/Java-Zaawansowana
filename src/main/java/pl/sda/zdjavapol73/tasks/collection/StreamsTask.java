@@ -8,7 +8,7 @@ import pl.sda.zdjavapol73.tasks.collection.domain.VideoType;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Optional;
+import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class StreamsTask implements Task {
@@ -29,28 +29,66 @@ public class StreamsTask implements Task {
         Episode episode3 = new Episode("got3", 4, Arrays.asList(video4, video5));
 
         Season season = new Season("GOTS1", 1, Arrays.asList(episode, episode1));
-        Season season1 = new Season("GOTS2", 2, Arrays.asList(episode2));
+        Season season1 = new Season("GOTS2", 2, Arrays.asList(episode2, episode3));
 
         seasons = Arrays.asList(season, season1);
     }
 
     @Override
     public void run() {
-        seasons.forEach(System.out::println);
+        // seasons.forEach(System.out::println);
 
         Collection<Episode> episodes = listOfEpisodes();
         System.out.println("List of episodes(" + episodes.size() + "):");
-        System.out.println(episodes);
+        System.out.println(episodes + "\n");
 
-        Collection<String> namesOfVideos = listOfVideoNames();
-        System.out.println("List of video names(" + namesOfVideos.size() + "):");
-        System.out.println(namesOfVideos);
+        Collection<Video> videos = listOfVideos();
+        System.out.println("List of videos(" + videos.size() + "):");
+        System.out.println(videos + "\n");
 
-        System.out.println("OPTIONAL");
-        final String givenName = "GOT1";
-        findVideoByName(givenName).ifPresentOrElse(
-                video -> System.out.println("found video: " + video),
-                () -> System.out.println("No video with given name was found."));
+        Collection<String> seasonNames = listOfSeasonNames();
+        System.out.println("List of season names(" + seasonNames.size() + "):");
+        System.out.println(seasonNames + "\n");
+
+        Collection<Integer> seasonNumbers = listOfSeasonNumber();
+        System.out.println("List of season numbers(" + seasonNumbers.size() + "):");
+        System.out.println(seasonNumbers + "\n");
+
+        Collection<String> episodeNames = listOfEpisodeNames();
+        System.out.println("List of episode names(" + episodeNames.size() + "):");
+        System.out.println(episodeNames + "\n");
+
+        Collection<Integer> episodeNumbers = listOfEpisodeNumbers();
+        System.out.println("List of episode numbers(" + episodeNumbers.size() + "):");
+        System.out.println(episodeNumbers + "\n");
+
+        Collection<String> videoTitles = listOfVideoNames();
+        System.out.println("List of video titles(" + videoTitles.size() + "):");
+        System.out.println(videoTitles + "\n");
+
+        Collection<String> videoUrls = listOfVideoUrls();
+        System.out.println("List of video urls(" + videoUrls.size() + "):");
+        System.out.println(videoUrls + "\n");
+
+        Collection<Episode> episodesFromEvenSeasons = listOfEpisodeFromEvenSeasons();
+        System.out.println("List of episodes from even seasons(" + episodesFromEvenSeasons.size() + "):");
+        System.out.println(episodesFromEvenSeasons + "\n");
+
+        Collection<Video> videosFromEvenSeasons = listOfVideosFromEvenSeasons();
+        System.out.println("List of videos from even seasons(" + videosFromEvenSeasons.size() + "):");
+        System.out.println(videosFromEvenSeasons + "\n");
+
+        Collection<Video> videosFromEvenSeasonsAndEpisodes = listOfVideosFromEvenSeasonsAndEpisodes();
+        System.out.println("List of videos from even seasons and episodes(" + videosFromEvenSeasonsAndEpisodes.size() + "):");
+        System.out.println(videosFromEvenSeasonsAndEpisodes + "\n");
+
+        Collection<Video> clipVideosFromEvenEpisodesAndOddSeasons = listOfClipVideosFromEvenEpisodesAndOddSeasons();
+        System.out.println("List of clip videos from even episodes and odd seasons(" + clipVideosFromEvenEpisodesAndOddSeasons.size() + "):");
+        System.out.println(clipVideosFromEvenEpisodesAndOddSeasons + "\n");
+
+        Collection<Video> previewVideosFromOddEpisodesAndEvenSeasons = listOfPreviewVideosFromOddEpisodesAndEvenSeasons();
+        System.out.println("List of preview videos from odd episodes and even seasons(" + previewVideosFromOddEpisodesAndEvenSeasons.size() + "):");
+        System.out.println(previewVideosFromOddEpisodesAndEvenSeasons + "\n");
     }
 
     private Collection<Episode> listOfEpisodes() {
@@ -60,59 +98,91 @@ public class StreamsTask implements Task {
     }
 
     private Collection<Video> listOfVideos() {
-        return seasons.stream().flatMap(s -> s.getEpisodes().stream()).flatMap(episode -> episode.getVideos().stream())
+        return seasons.stream()
+                .flatMap(season -> season.getEpisodes().stream())
+                .flatMap(episode -> episode.getVideos().stream())
                 .collect(Collectors.toList());
     }
 
     private Collection<String> listOfSeasonNames() {
-        return null;
+        return seasons.stream()
+                .map(Season::getSeasonName)
+                .collect(Collectors.toList());
     }
 
     private Collection<Integer> listOfSeasonNumber() {
-        return null;
+        return seasons.stream()
+                .map(Season::getSeasonNumber)
+                .collect(Collectors.toList());
     }
 
     private Collection<String> listOfEpisodeNames() {
-        return null;
+        return seasons.stream()
+                .flatMap(season -> season.getEpisodes().stream())
+                .map(Episode::getEpisodeName)
+                .collect(Collectors.toList());
     }
 
     private Collection<Integer> listOfEpisodeNumbers() {
-        return null;
+        return seasons.stream()
+                .flatMap(season -> season.getEpisodes().stream())
+                .map(Episode::getEpisodeNumber)
+                .collect(Collectors.toList());
     }
 
     private Collection<String> listOfVideoNames() {
-        return listOfVideos().stream().map(Video::getTitle).collect(Collectors.toList());
+        return listOfVideos().stream()
+                .map(Video::getTitle)
+                .collect(Collectors.toList());
     }
 
     private Collection<String> listOfVideoUrls() {
-        return null;
+        return listOfVideos().stream()
+                .map(Video::getUrl)
+                .collect(Collectors.toList());
     }
 
     private Collection<Episode> listOfEpisodeFromEvenSeasons() {
-        return null;
+        return seasons.stream()
+                .filter(season -> season.getSeasonNumber() % 2 == 0)
+                .flatMap(season -> season.getEpisodes().stream())
+                .collect(Collectors.toList());
     }
 
     private Collection<Video> listOfVideosFromEvenSeasons() {
-        return null;
+        return seasons.stream()
+                .filter(season -> season.getSeasonNumber() % 2 == 0)
+                .flatMap(season -> season.getEpisodes().stream())
+                .flatMap(episode -> episode.getVideos().stream())
+                .collect(Collectors.toList());
     }
 
     private Collection<Video> listOfVideosFromEvenSeasonsAndEpisodes() {
-        return seasons.stream().filter(season -> season.getSeasonNumber() % 2 == 0)
-                .flatMap(season -> season.getEpisodes().stream()).filter(episode -> episode.getEpisodeNumber() % 2 == 0)
-                .flatMap(episode -> episode.getVideos().stream()).collect(Collectors.toList());
+        return seasons.stream()
+                .filter(season -> season.getSeasonNumber() % 2 == 0)
+                .flatMap(season -> season.getEpisodes().stream())
+                .filter(episode -> episode.getEpisodeNumber() % 2 == 0)
+                .flatMap(episode -> episode.getVideos().stream())
+                .collect(Collectors.toList());
     }
 
     private Collection<Video> listOfClipVideosFromEvenEpisodesAndOddSeasons() {
-        return null;
+        return seasons.stream()
+                .filter(season -> season.getSeasonNumber() % 2 != 0)
+                .flatMap(season -> season.getEpisodes().stream())
+                .filter(episode -> episode.getEpisodeNumber() % 2 == 0)
+                .flatMap(episode -> episode.getVideos().stream())
+                .filter(video -> video.getVideoType().equals(VideoType.CLIP))
+                .collect(Collectors.toList());
     }
 
     private Collection<Video> listOfPreviewVideosFromOddEpisodesAndEvenSeasons() {
-        return null;
-    }
-
-    private Optional<Video> findVideoByName(String name) {
-        return listOfVideos().stream()
-                .filter(video -> video.getTitle().equals(name))
-                .findFirst();
+        return seasons.stream()
+                .filter(season -> season.getSeasonNumber() % 2 == 0)
+                .flatMap(season -> season.getEpisodes().stream())
+                .filter(episode -> episode.getEpisodeNumber() % 2 != 0)
+                .flatMap(episode -> episode.getVideos().stream())
+                .filter(video -> video.getVideoType().equals(VideoType.PREVIEW))
+                .collect(Collectors.toList());
     }
 }
