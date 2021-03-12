@@ -3,6 +3,7 @@ package pl.sda.zdjavapol73;
 import pl.sda.zdjavapol73.api.Task;
 import pl.sda.zdjavapol73.homework.exceptions.task1.CannotDivideBy0Exception;
 import pl.sda.zdjavapol73.homework.exceptions.task1.MathematicalDivide;
+import pl.sda.zdjavapol73.homework.interfaces.UserValidator;
 import pl.sda.zdjavapol73.homework.oop.task1.Point2D;
 import pl.sda.zdjavapol73.homework.oop.task1.Point3D;
 import pl.sda.zdjavapol73.homework.oop.task2.Student;
@@ -101,8 +102,11 @@ public class Main {
         System.out.println(test6.getRadius());
         System.out.println(test6.getArea());*/
 
-        System.out.println(MathematicalDivide.divide(4.0, 1));
-        System.out.println(MathematicalDivide.divide(4.0, 0));
+//        System.out.println(MathematicalDivide.divide(4.0, 1));
+//        System.out.println(MathematicalDivide.divide(4.0, 0));
+
+        UserValidator userValidator = new UserValidator();
+        userValidator.validateEmail("hey");
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
