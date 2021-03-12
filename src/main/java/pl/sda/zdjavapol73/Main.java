@@ -3,6 +3,7 @@ package pl.sda.zdjavapol73;
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task2.Movie;
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task3.Car;
 import pl.sda.zdjavapol73.homework.enumTasks.task1.Weekday;
+import pl.sda.zdjavapol73.homework.enumTasks.task2.PackageSize;
 import pl.sda.zdjavapol73.homework.exceptions.task1.CannotDivideBy0Exception;
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task1.UserValidator;
 
@@ -107,6 +108,9 @@ public class Main {
         System.out.println(car.toString());
 
         Weekday.FRIDAY.whichIsGreater(Weekday.SATURDAY);
+
+        PackageSize packageSize = PackageSize.getPackageSize(40, 70);
+        System.out.println(packageSize);
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
