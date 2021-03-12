@@ -1,6 +1,7 @@
 package pl.sda.zdjavapol73;
 
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task2.Movie;
+import pl.sda.zdjavapol73.homework.classesandinterfaces.task3.Car;
 import pl.sda.zdjavapol73.homework.exceptions.task1.CannotDivideBy0Exception;
 import pl.sda.zdjavapol73.homework.classesandinterfaces.task1.UserValidator;
 
@@ -90,7 +91,7 @@ public class Main {
 //        System.out.println(MathematicalDivide.divide(4.0, 1));
 //        System.out.println(MathematicalDivide.divide(4.0, 0));
 
-        UserValidator userValidator = new UserValidator();
+       /* UserValidator userValidator = new UserValidator();
         userValidator.validateEmail("hey");
 
         Movie.MovieCreator movieCreator = new Movie.MovieCreator();
@@ -99,7 +100,10 @@ public class Main {
         movieCreator.setDirector("Steven Spielberg");
         movieCreator.setPublisher("Hollywood");
         movieCreator.setYearOfProduction(1996);
-        System.out.println(movieCreator.createMovie().toString());
+        System.out.println(movieCreator.createMovie().toString());*/
+
+        Car car = new Car("Tesla X", "luxury");
+        System.out.println(car.toString());
 
 
         //        System.out.println(new Random().nextInt(18) + 1);
