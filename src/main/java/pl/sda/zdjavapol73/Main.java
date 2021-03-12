@@ -1,23 +1,8 @@
 package pl.sda.zdjavapol73;
 
-import pl.sda.zdjavapol73.api.Task;
+import pl.sda.zdjavapol73.homework.classesandinterfaces.task2.Movie;
 import pl.sda.zdjavapol73.homework.exceptions.task1.CannotDivideBy0Exception;
-import pl.sda.zdjavapol73.homework.exceptions.task1.MathematicalDivide;
-import pl.sda.zdjavapol73.homework.interfaces.UserValidator;
-import pl.sda.zdjavapol73.homework.oop.task1.Point2D;
-import pl.sda.zdjavapol73.homework.oop.task1.Point3D;
-import pl.sda.zdjavapol73.homework.oop.task2.Student;
-import pl.sda.zdjavapol73.homework.oop.task3.Rectangle;
-import pl.sda.zdjavapol73.homework.oop.task3.Shape;
-import pl.sda.zdjavapol73.homework.oop.task3.Square;
-import pl.sda.zdjavapol73.homework.oop.task5.Line;
-import pl.sda.zdjavapol73.homework.oop.task6.MovablePoint;
-import pl.sda.zdjavapol73.homework.oop.task7.Circle;
-import pl.sda.zdjavapol73.homework.oop.task7.ResizableCircle;
-import pl.sda.zdjavapol73.tasks.EnumTask;
-
-import java.util.ArrayList;
-import java.util.Collection;
+import pl.sda.zdjavapol73.homework.classesandinterfaces.task1.UserValidator;
 
 public class Main {
     public static void main(String[] args) throws CannotDivideBy0Exception {
@@ -107,6 +92,14 @@ public class Main {
 
         UserValidator userValidator = new UserValidator();
         userValidator.validateEmail("hey");
+
+        Movie.MovieCreator movieCreator = new Movie.MovieCreator();
+        movieCreator.setTitle("test title");
+        movieCreator.setCategory("horror");
+        movieCreator.setDirector("Steven Spielberg");
+        movieCreator.setPublisher("Hollywood");
+        movieCreator.setYearOfProduction(1996);
+        System.out.println(movieCreator.createMovie().toString());
 
 
         //        System.out.println(new Random().nextInt(18) + 1);

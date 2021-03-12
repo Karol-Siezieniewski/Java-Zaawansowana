@@ -1,4 +1,4 @@
-package pl.sda.zdjavapol73.homework.interfaces;
+package pl.sda.zdjavapol73.homework.classesandinterfaces.task1;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
